@@ -1,0 +1,20 @@
+---
+const { label, name, message } = Astro.props;
+---
+
+<div>
+  <label for={name}
+    ><span class="mb-1 block text-sm font-semibold">{label}</span>
+    <textarea
+      class="w-full rounded border-2 border-gray-100 focus:border-2 focus:border-blue-400 focus:ring-0"
+      name={name}
+      id={name}
+      rows="10"
+      x-model:value={name}
+    >
+    </textarea>
+    <div class="pt-2 text-sm text-gray-500">
+      {message && message}
+    </div>
+  </label>
+</div>

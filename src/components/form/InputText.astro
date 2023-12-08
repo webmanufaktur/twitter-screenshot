@@ -1,0 +1,17 @@
+---
+const { label, name, message } = Astro.props;
+---
+
+<div>
+  <label for={name}
+    ><span class="mb-1 block text-sm font-semibold">{label}</span><input
+      class="w-full rounded border-2 border-gray-100 focus:border-2 focus:border-blue-400 focus:ring-0"
+      type="text"
+      name={name}
+      id={name}
+      x-model:value={name}
+    /></label
+  ><div class="pt-2 text-sm text-gray-500">
+    {message && message}
+  </div>
+</div>

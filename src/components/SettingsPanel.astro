@@ -1,0 +1,41 @@
+---
+import InputText from "./form/InputText.astro";
+import InputCheckbox from "./form/InputCheckbox.astro";
+import InputTextarea from "./form/InputTextarea.astro";
+import InputButtonReset from "./form/InputButtonReset.astro";
+---
+
+<div class="w-[400px] p-12 font-mono">
+  <div class="space-y-4">
+    <InputText label="Name" name="ftname" />
+    <InputText label="Handle" name="fthandle" />
+
+    <div>
+      <span class="mb-1 block text-sm font-semibold">Show Badge?</span>
+    </div>
+
+    <InputCheckbox label="Verification" name="ftverified" />
+    <InputCheckbox label="Advertiser" name="ftadvertiser" />
+    <InputCheckbox label="Official" name="ftofficial" />
+
+    <!-- AVATAR ICON -->
+    <InputText
+      label="Avatar URL"
+      name="ftavatar"
+      message="Add any image url you like."
+    />
+
+    <InputTextarea
+      label="Tweet"
+      name="fttext"
+      message="HTML allowed, no max-length."
+    />
+
+    <InputText label="Replies" name="ftreplies" />
+    <InputText label="Retweets" name="ftretweets" />
+    <InputText label="Likes" name="ftlikes" />
+    <InputText label="Stats" name="ftstats" />
+  </div>
+
+  <InputButtonReset label="Reset to default settings" />
+</div>
