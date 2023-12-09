@@ -1,0 +1,23 @@
+---
+const { label, name, group } = Astro.props;
+const checked = name === "ftverified";
+---
+
+<div>
+  <label for={name}>
+    <div class="flex text-sm">
+      <input
+        type="radio"
+        name={group}
+        id={name}
+        x-model={group}
+        value={name}
+        class="form-radio rounded text-blue-400"
+        {...checked ? { checked: checked } : {}}
+      />
+      <div class="ml-1">
+        {label}
+      </div>
+    </div>
+  </label>
+</div>

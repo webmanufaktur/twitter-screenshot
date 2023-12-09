@@ -12,5 +12,12 @@
   </head>
   <body>
     <h1>Astro</h1>
+    <div x-data="{res: ''}">
+      <input type="radio" id="cat" name="pet" value="cat" x-model="res" />
+      <label for="cat">Cat</label><br />
+      <input type="radio" id="dog" name="pet" value="dog" x-model="res" />
+      <label for="dog">Dog</label><br />
+      <p x-text="res"></p>
+    </div>
   </body>
 </html>

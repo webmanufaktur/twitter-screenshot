@@ -6,10 +6,10 @@ const { label, name, message } = Astro.props;
   <label for={name}
     ><span class="mb-1 block text-sm font-semibold">{label}</span>
     <textarea
-      class="w-full rounded border-2 border-gray-100 focus:border-2 focus:border-blue-400 focus:ring-0"
+      class="w-full rounded border-2 border-gray-100 focus:border-2 focus:border-blue-400 focus:ring-0 fttextarea"
       name={name}
       id={name}
-      rows="10"
+      rows="5"
       x-model:value={name}
     >
     </textarea>

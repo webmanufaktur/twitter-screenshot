@@ -7,7 +7,12 @@ import SettingsPanel from "../components/SettingsPanel.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fake Tweet</title>
+    <title>Clean Twitter Screenshots</title>
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="description"
+      content="Twitter/X Screenshot template - create your Twitter/X screenshots without any noise."
+    />
     <style>
       .fttext a {
         color: blue !important;
@@ -20,9 +25,9 @@ import SettingsPanel from "../components/SettingsPanel.astro";
   <body
     class=""
     data-x-data="app"
-    x-data="{ftname: '', fthandle: '', ftavatar: '', fttext: '', ftreplies: '69', ftretweets: '420', ftlikes: '1.337', ftstats: '31.415', ftverified: false, ftadvertiser: false, ftofficial: false,}"
+    x-data="{ftname: '', fthandle: '', ftavatar: '', fttext: '', ftreplies: '69', ftretweets: '420', ftlikes: '1.337', ftstats: '31.415', ftbadge: 'ftbasic' }"
   >
-    <div class="min-h-screen">
+    <div class="flex min-h-screen">
       <!-- TWEET -->
       <div
         class="flex flex-1 items-center justify-center bg-gradient-to-b from-purple-500 to-pink-500"
@@ -39,19 +44,25 @@ import SettingsPanel from "../components/SettingsPanel.astro";
                   x-cloak
                   x-show="ftavatar"
                 />
-                <img
-                  src="/images/profile_icon_2.jpg"
-                  class="block h-12 w-12 rounded-full"
-                  alt=""
-                  x-cloak
-                  x-show="!ftavatar"
-                />
+                <a href="https://webmanufaktur.net/" target="_blank">
+                  <img
+                    src="/images/profile_icon_2.jpg"
+                    class="block h-12 w-12 rounded-full"
+                    alt=""
+                    x-cloak
+                    x-show="!ftavatar"
+                  /></a
+                >
               </div>
               <div>
                 <!-- HANDLE -->
                 <span class="relative text-sm font-bold leading-tight">
                   <span x-text="ftname" x-cloak x-show="ftname"></span>
-                  <span x-cloak x-show="!ftname">Alexander Abelt</span>
+                  <span x-cloak x-show="!ftname">
+                    <a href="https://abelt.de/" target="_blank"
+                      >Alexander Abelt</a
+                    >
+                  </span>
 
                   <!-- Verified -->
                   <svg
@@ -61,7 +72,7 @@ import SettingsPanel from "../components/SettingsPanel.astro";
                     class="absolute -right-[22px] -top-1 h-5 w-5 text-[#1da1f2]"
                     fill="currentColor"
                     x-cloak
-                    x-show="ftverified"
+                    x-show="ftbadge == 'ftverified'"
                   >
                     <g>
                       <path
@@ -74,7 +85,7 @@ import SettingsPanel from "../components/SettingsPanel.astro";
                   <svg
                     viewBox="0 0 22 22"
                     x-cloak
-                    x-show="ftadvertiser"
+                    x-show="ftbadge == 'ftadvertiser'"
                     aria-label="Verifizierter Account"
                     role="img"
                     class="absolute -right-[22px] -top-1 h-5 w-5 text-[#1da1f2]"
@@ -125,7 +136,7 @@ import SettingsPanel from "../components/SettingsPanel.astro";
                   <svg
                     viewBox="0 0 22 22"
                     x-cloak
-                    x-show="ftofficial"
+                    x-show="ftbadge == 'ftofficial'"
                     aria-label="Verifizierter Account"
                     role="img"
                     class="absolute -right-[22px] -top-1 h-5 w-5 text-[#1da1f2]"
@@ -143,7 +154,9 @@ import SettingsPanel from "../components/SettingsPanel.astro";
                 <span class="flex text-sm leading-tight text-gray-500">
                   @
                   <span x-text="fthandle" x-cloak x-show="fthandle"></span>
-                  <span x-cloak x-show="!fthandle">acabelt</span>
+                  <span x-cloak x-show="!fthandle">
+                    <a href="https://x.com/acabelt" target="_blank">acabelt</a>
+                  </span>
                 </span>
               </div>
             </div>
@@ -158,9 +171,29 @@ import SettingsPanel from "../components/SettingsPanel.astro";
                   class="break-words"
                   x-cloak
                   x-show="fttext"></span>
-                <div x-cloak x-show="!fttext">
-                  <strong>Fake Tweet Generator</strong> - Nur ein kleiner Spaß,
-                  der jetzt auch die letzten Eingaben speichert.
+                <div x-cloak x-show="!fttext" class="leading-relaxed">
+                  I needed clean <strong>Twitter/X</strong> screenshots so I
+                  built this.
+                  <br />
+                  <br />
+                  <strong>Create a Twitter Screenshot Template:</strong>
+                  <br />
+                  <a
+                    href="https://twitter-screenshot.webmanufaktur.net/"
+                    target="_blank"
+                    style="font-weight: 500; text-decoration: underline; color: blue;"
+                    >https://twitter-screenshot.webmanufaktur.net/</a
+                  >
+
+                  <br />
+                   Play around. Have fun!<br />
+
+                  <br />
+                  <strong
+                    ><a href="https://astro.build/" target="_blank">Astro</a> +
+                    <a href="https://alpinejs.dev/" target="_blank">AlpineJS</a>
+                     = 💙</strong
+                  >
                 </div>
               </div>
             </div>
